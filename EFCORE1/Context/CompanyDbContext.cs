@@ -19,8 +19,8 @@ namespace EFCORE1.Context
         public DbSet<Instructor> Instructor { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Topic> Topic { get; set; }
-        public DbSet<StudCourse> StudCourse { get; set; }
-        public DbSet<CourseInst> CourseInst { get; set; }
+        //public DbSet<StudCourse> StudCourse { get; set; }
+        //public DbSet<CourseInst> CourseInst { get; set; }
 
 
     }
