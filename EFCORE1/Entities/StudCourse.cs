@@ -8,7 +8,7 @@ namespace EFCORE1.Entities
         [Key]
 
         public int Stud_ID { get; set; }
-        [Key]
+
 
         public int Course_ID { get; set; } 
 

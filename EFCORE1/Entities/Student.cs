@@ -18,9 +18,5 @@ namespace EFCORE1.Entities
         public string Address { get; set; }
         public int? Age { get; set; }
 
-
-
-
-
     }
 }
