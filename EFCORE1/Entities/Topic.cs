@@ -4,8 +4,9 @@ namespace EFCORE1.Entities
 {
     public class Topic
     {
+        [Key]
 
-        public int ID { get; set; }
+        public int Topic_ID { get; set; }
 
         public string Name { get; set; }
     }
