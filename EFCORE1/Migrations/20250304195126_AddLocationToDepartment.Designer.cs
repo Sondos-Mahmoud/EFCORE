@@ -4,6 +4,7 @@ using EFCORE1.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFCORE1.Migrations
 {
     [DbContext(typeof(CompanyDbContext))]
-    partial class CompanyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250304195126_AddLocationToDepartment")]
+    partial class AddLocationToDepartment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,11 +27,11 @@ namespace EFCORE1.Migrations
 
             modelBuilder.Entity("EFCORE1.Entities.Course", b =>
                 {
-                    b.Property<int>("Course_ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Course_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -42,61 +45,41 @@ namespace EFCORE1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Course_ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Course");
                 });
 
-            modelBuilder.Entity("EFCORE1.Entities.CourseInst", b =>
-                {
-                    b.Property<int>("Inst_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Inst_ID"));
-
-                    b.Property<int>("Course_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Evaluate")
-                        .HasColumnType("int");
-
-                    b.HasKey("Inst_ID");
-
-                    b.ToTable("CourseInst");
-                });
-
             modelBuilder.Entity("EFCORE1.Entities.Department", b =>
                 {
-                    b.Property<int>("Dept_ID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Dept_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<DateTime>("HiringDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Inst_ID")
+                    b.Property<int>("Ins_ID")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Dept_ID");
+                    b.HasKey("ID");
 
                     b.ToTable("Department");
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Instructor", b =>
                 {
-                    b.Property<int>("Inst_ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Inst_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Adress")
                         .IsRequired()
@@ -115,37 +98,18 @@ namespace EFCORE1.Migrations
                     b.Property<int>("salary")
                         .HasColumnType("int");
 
-                    b.HasKey("Inst_ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Instructor");
                 });
 
-            modelBuilder.Entity("EFCORE1.Entities.StudCourse", b =>
-                {
-                    b.Property<int>("Stud_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Stud_ID"));
-
-                    b.Property<int>("Course_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Grade")
-                        .HasColumnType("int");
-
-                    b.HasKey("Stud_ID");
-
-                    b.ToTable("StudCourse");
-                });
-
             modelBuilder.Entity("EFCORE1.Entities.Student", b =>
                 {
-                    b.Property<int>("Stud_ID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Stud_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -162,24 +126,24 @@ namespace EFCORE1.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Stud_ID");
+                    b.HasKey("ID");
 
                     b.ToTable("Student");
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Topic", b =>
                 {
-                    b.Property<int>("Topic_ID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Topic_ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Topic_ID");
+                    b.HasKey("ID");
 
                     b.ToTable("Topic");
                 });
