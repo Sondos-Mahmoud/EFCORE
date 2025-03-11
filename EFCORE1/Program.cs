@@ -12,7 +12,7 @@ namespace EFCORE1
 
 
 
-            //CRUD OPERATIONSك
+            //CRUD OPERATIONS
             #region Insert
             //Course c01 = new Course()
             //{

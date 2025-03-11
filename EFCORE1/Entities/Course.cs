@@ -19,7 +19,7 @@ namespace EFCORE1.Entities
 
     //} 
     #endregion
-    internal class Course
+    public class Course
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -28,6 +28,17 @@ namespace EFCORE1.Entities
         public string Description { get; set; }
         public string Duration { get; set; }
 
+        // Foreign Key
+        public int Top_ID { get; set; } // Added based on ER diagram
 
+        // Navigation Property
+        [ForeignKey("Top_ID")]
+        public Topic Topic { get; set; }
+
+        // Many-to-Many with Student via StudCourse
+        public ICollection<StudCourse> StudCourses { get; set; }
+
+        // Many-to-Many with Instructor via CourseInst
+        public ICollection<CourseInst> CourseInstructors { get; set; }
     }
 }
