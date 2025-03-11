@@ -4,13 +4,18 @@ using System.ComponentModel.DataAnnotations;
 namespace EFCORE1.Entities
 {
 
+  
     public class CourseInst
     {
-        [Key]
-        public int Inst_ID { get; set; } // Instructor ID (part of the composite key)
+        public int Inst_ID { get; set; }
+        public int Course_ID { get; set; }
+        public int Evaluate { get; set; }
 
-        public int Course_ID { get; set; } // Course ID (part of the composite key)
+        // Navigation Properties
+        [ForeignKey("Inst_ID")]
+        public Instructor Instructor { get; set; }
 
-        public int Evaluate { get; set; } // Evaluation score
+        [ForeignKey("Course_ID")]
+        public Course Course { get; set; }
     }
 }
