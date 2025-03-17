@@ -44,7 +44,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Course_ID");
 
-                    b.ToTable("Course");
+                    b.ToTable("Course", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.CourseInst", b =>
@@ -63,7 +63,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Inst_ID");
 
-                    b.ToTable("CourseInst");
+                    b.ToTable("CourseInst", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Department", b =>
@@ -87,7 +87,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Dept_ID");
 
-                    b.ToTable("Department");
+                    b.ToTable("Department", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Instructor", b =>
@@ -117,7 +117,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Inst_ID");
 
-                    b.ToTable("Instructor");
+                    b.ToTable("Instructor", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.StudCourse", b =>
@@ -136,7 +136,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Stud_ID");
 
-                    b.ToTable("StudCourse");
+                    b.ToTable("StudCourse", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Student", b =>
@@ -164,7 +164,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Stud_ID");
 
-                    b.ToTable("Student");
+                    b.ToTable("Student", (string)null);
                 });
 
             modelBuilder.Entity("EFCORE1.Entities.Topic", b =>
@@ -181,7 +181,7 @@ namespace EFCORE1.Migrations
 
                     b.HasKey("Topic_ID");
 
-                    b.ToTable("Topic");
+                    b.ToTable("Topic", (string)null);
                 });
 #pragma warning restore 612, 618
         }
