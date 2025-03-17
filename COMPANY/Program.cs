@@ -1,4 +1,6 @@
 ﻿using Demo;
+using COMPANY;
+
 using Microsoft.EntityFrameworkCore;
 
 namespace COMPANY
@@ -52,7 +54,21 @@ namespace COMPANY
 
             #endregion
 
+            #region tracking
+            //var employee = (from E in dbContext.Employees
+            //                where E.EmpId == 2
+            //                select E).AsNoTracking().FirstOrDefault();
 
+            //Console.WriteLine(dbContext.Entry(employee).State);
+
+            //employee.Name = "hamadaaa";
+            //Console.WriteLine(dbContext.Entry(employee).State);
+
+            //dbContext.Attach(employee);
+            //dbContext.Entry(employee).State = EntityState.Modified;
+
+            //dbContext.SaveChanges(); 
+            #endregion
         }
     }
 }
