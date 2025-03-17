@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 namespace Demo
 {
    
-        [Table("Employees", Schema = "dbo")]
-         class Employee
+    [Table("Employees", Schema = "dbo")]
+      public class Employee
     {
             [Key]
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
@@ -37,6 +37,8 @@ namespace Demo
             [NotMapped] // This property will not be mapped to the database
             public string PhoneNumber { get; set; }
             public string Address { get; internal set; }
+            public int DepartmentId { get; set; }
+            public virtual Department Department { get; set; }
     }
     }
 
