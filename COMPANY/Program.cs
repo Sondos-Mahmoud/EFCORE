@@ -165,7 +165,25 @@ namespace COMPANY
                 Console.WriteLine();
             }
             #endregion
+            #region Group Join [Right outer join]
 
+            //var Result07 = dbContext.Employees.GroupJoin(dbContext.Departments, E => E.DepartmentId, D => D.Dept_ID,
+            //    (E, D) => new
+            //    {
+            //        Department = D,
+            //        Employees = E
+            //    });
+
+
+            //    foreach (var item in Result07)
+            //    {
+            //    Console.WriteLine(item.Employees.Name);
+            //        foreach (var item1 in item.Department)
+            //        {
+            //        Console.WriteLine(item1.Name);
+            //        }
+            //        }
+            //    }
 
         }
     }
