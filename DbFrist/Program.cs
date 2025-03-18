@@ -42,7 +42,15 @@ namespace DbFrist
             //}
 
             #region stored procdure
-           
+            //NorthwindContextProcedures procedures = new NorthwindContextProcedures(dbContext);
+
+            //var Products = procedures.SalesByCategoryAsync("Seafood", "1998").Result;
+
+            //foreach (var item in Products)
+            //{
+            //    Console.WriteLine($"{item.ProductName} :: {item.TotalPurchase}'");
+            //    Console.WriteLine(item);
+            //}
             #endregion
 
 
