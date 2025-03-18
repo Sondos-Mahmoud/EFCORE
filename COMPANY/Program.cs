@@ -184,6 +184,30 @@ namespace COMPANY
             //        }
             //        }
             //    }
+            #endregion
+            #region Cross Join
+            var Result08= from E in dbContext.Employees
+                         from D in dbContext.Departments
+                         select new
+                         {
+                             E.Name,
+                             deptName = D.Name,
+                         };
+        
+
+          var Result10 = dbContext.Employees.SelectMany(E => dbContext.Departments.Select(D => new
+                {
+                E.Name,
+                deptName = D.Name
+                }));
+
+
+foreach (var item in Result08)
+{
+    Console.WriteLine(item);
+}
+#endregion
+
 
         }
     }
