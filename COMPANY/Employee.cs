@@ -10,7 +10,7 @@ namespace Demo
 {
    
     [Table("Employees", Schema = "dbo")]
-      public class Employee
+    public class Employee
     {
             [Key]
             [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
