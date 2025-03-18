@@ -33,9 +33,12 @@ namespace COMPANY
             //    d.Property(d => d.DepthId)
             //        .UseIdentityColumn(10, 10); // Configure identity column
             //});
+            modelBuilder.Entity<EmployeeDepartment>().ToView("EmployeeDepartmentView");
         }
 
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeDepartment> EmployeeDepartment { get; set; }
+
     }
 }
