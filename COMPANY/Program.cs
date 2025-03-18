@@ -3,6 +3,7 @@ using COMPANY;
 
 using Microsoft.EntityFrameworkCore;
 
+
 namespace COMPANY
 {
     internal class Program
@@ -68,6 +69,13 @@ namespace COMPANY
             //dbContext.Entry(employee).State = EntityState.Modified;
 
             //dbContext.SaveChanges(); 
+            #endregion
+
+            #region view
+            foreach (var item in DbContext.EmployeeDepartment)
+            {
+                Console.WriteLine($"Employee: {item.EmpName}, Department: {item.DeptName}");
+            }
             #endregion
         }
     }
