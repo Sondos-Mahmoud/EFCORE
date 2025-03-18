@@ -38,7 +38,7 @@ namespace COMPANY
 
         public DbSet<Department> Departments { get; set; }
         public DbSet<Employee> Employees { get; set; }
-        public DbSet<EmployeeDepartment> EmployeeDepartment { get; set; }
+        public DbSet<EmployeeDepartment> EmployeeDepartments { get; set; }
 
     }
 }
